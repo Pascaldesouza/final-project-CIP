@@ -23,7 +23,7 @@
 - `expenses.csv` – Generated after expenses are logged
 - `README.md` – Project overview
 
-## 🎮 Demo
+## Demo
 
 Run the script in any terminal with Python 3:
 ```bash
