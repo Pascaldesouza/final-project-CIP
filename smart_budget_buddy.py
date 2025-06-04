@@ -7,7 +7,6 @@ expenses = []
 # Prompt the user to set a monthly budget
 monthly_budget = float(input("Enter your monthly budget: $"))
 
-# -------------------------------
 # Load saved expenses from CSV file
 def load_expenses_from_file():
     try:
@@ -31,7 +30,6 @@ def save_expenses_to_file():
         for exp in expenses:
             writer.writerow(exp)
 
-# -------------------------------
 # Add new expense
 def add_expense():
     date = input("Enter date (year-month-day, e.g.2020-06-14): ")
@@ -44,7 +42,7 @@ def add_expense():
     except ValueError:
         print("Invalid amount. Please enter a number.")
 
-# -------------------------------
+
 # View summary of total and remaining budget
 def view_summary():
     total_spent = sum(exp["amount"] for exp in expenses)
@@ -54,7 +52,6 @@ def view_summary():
     if total_spent > monthly_budget:
         suggest_savings_tip()
 
-# -------------------------------
 # Show Top 3 Categories
 def show_top_3_categories():
     if not expenses:
@@ -70,7 +67,6 @@ def show_top_3_categories():
     for i, (cat, total) in enumerate(sorted_categories[:3], start=1):
         print(f"{i}. {cat} - ${total:.2f}")
 
-# -------------------------------
 # Suggest a random savings tip
 def suggest_savings_tip():
     saving_tips = [
@@ -81,6 +77,7 @@ def suggest_savings_tip():
         "Plan a staycation instead of a vacation.",
         "Use a grocery list to avoid impulse buys.",
         "Turn off unused lights and electronics to save energy."
+        "Cancel unnecessary subscriptions."
     ]
     print("\n⚠️ Overspending Alert!")
     print("Tip:", random.choice(saving_tips))
